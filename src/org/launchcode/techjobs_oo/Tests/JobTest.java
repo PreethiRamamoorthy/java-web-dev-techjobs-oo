@@ -43,8 +43,9 @@ public class JobTest {
     //Test1
     @Test
     public void testSettingJobId(){
-        assertEquals(1.0,empty_test_job.getId(),.001);
-        assertEquals(2.0,empty_test_job1.getId(),.001);
+        assertEquals(1,empty_test_job.getId());
+        System.out.println(empty_test_job.getId());
+        assertEquals(2,empty_test_job1.getId());
         //assertTrue(empty_test_job1.getId()>empty_test_job.getId());
     }
     //Test2
@@ -70,7 +71,7 @@ public class JobTest {
 
     @Test
     public void totalJobtoStringOutput() {
-        assertEquals("\nID=5\nName=DataScientist\nEmployer=Centene\nLocation=Clayton\nPosition Type=MLEngineer\nCore Competency=Python\n",
+        assertEquals("\nID: 5\nName: DataScientist\nEmployer: Centene\nLocation: Clayton\nPosition Type: MLEngineer\nCore Competency: Python\n",
                         test3_job1.toString());
     }
 }
