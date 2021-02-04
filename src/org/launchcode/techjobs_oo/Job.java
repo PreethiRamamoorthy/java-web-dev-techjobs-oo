@@ -56,7 +56,7 @@ public class Job {
     public String toString() {
         return "\n" +
                 "ID: " + id + "\n" +
-                "Name: " + name + "\n" +
+                "Name: " + ((getName().isEmpty()) ? "Data not available": name)+"\n" +
                 "Employer: " + ((employer.getValue().isEmpty()) ? "Data not available": employer)+ "\n" +
                 "Location: " + ((location.getValue().isEmpty()) ? "Data not available": location) + "\n" +
                 "Position Type: " + ((positionType.getValue().isEmpty()) ? "Data not available": positionType)  + "\n" +

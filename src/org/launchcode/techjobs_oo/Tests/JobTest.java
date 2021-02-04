@@ -9,19 +9,21 @@ import static org.junit.Assert.*;
 public class JobTest {
     Job test_job;
     Job test_job1;
-    Job empty_test_job;
-    Job empty_test_job1;
+    Job empty_test_job3;
+    Job empty_test_job4;
     Job test3_job1;
     Job test3_job2;
+    Job test3_job3;
     @Before
     public void createJobObject(){
-        empty_test_job=new Job();
-        empty_test_job1=new Job();
+        empty_test_job3=new Job();
+        empty_test_job4=new Job();
         test_job=new Job("FullStackWebDeveloper",
                 new Employer("Bayer"),
                 new Location("Chesterfield"),
                 new PositionType("Front end Developer"),
                 new CoreCompetency("Java"));
+
         test_job1=new Job("DataScientist",
                 new Employer("Bayer"),
                 new Location("Chesterfield"),
@@ -39,14 +41,20 @@ public class JobTest {
                 new Location("Clayton"),
                 new PositionType("MLEngineer"),
                 new CoreCompetency("Python"));
+
+        test3_job3 = new Job("",
+                new Employer(""),
+                new Location(""),
+                new PositionType(""),
+                new CoreCompetency(""));
     }
     //Test1
     @Test
     public void testSettingJobId(){
-        assertEquals(1,empty_test_job.getId());
-        System.out.println(empty_test_job.getId());
-        assertEquals(2,empty_test_job1.getId());
-        //assertTrue(empty_test_job1.getId()>empty_test_job.getId());
+//        assertEquals(1,empty_test_job3.getId());
+//        System.out.println(empty_test_job3.getId());
+//        assertEquals(2,empty_test_job4.getId());
+        assertTrue(empty_test_job4.getId()>empty_test_job3.getId());
     }
     //Test2
     @Test
@@ -67,7 +75,19 @@ public class JobTest {
     @Test
     public void testStringOutput() {
         assertEquals(true,test3_job1.toString().startsWith("\n"));
+        assertEquals(true,test3_job1.toString().endsWith("\n"));
     }
+
+    @Test
+    public void testtoStringBlanks() {
+        assertEquals(true,test3_job3.toString().contains("Name: Data not available"));
+        assertEquals(true,test3_job3.toString().contains("Employer: Data not available"));
+        assertEquals(true,test3_job3.toString().contains("Location: Data not available"));
+        assertEquals(true,test3_job3.toString().contains("Position Type: Data not available"));
+        assertEquals(true,test3_job3.toString().contains("Core Competency: Data not available"));
+
+    }
+
 
     @Test
     public void totalJobtoStringOutput() {
