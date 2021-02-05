@@ -88,10 +88,18 @@ public class JobTest {
 
     }
 
-
     @Test
     public void totalJobtoStringOutput() {
         assertEquals("\nID: 5\nName: DataScientist\nEmployer: Centene\nLocation: Clayton\nPosition Type: MLEngineer\nCore Competency: Python\n",
                         test3_job1.toString());
+    }
+
+    @Test
+    public void abc() {
+        assertTrue(test_job instanceof Job);
+        assertTrue(test_job.getEmployer() instanceof Employer);
+        assertTrue(test_job.getLocation() instanceof Location);
+        assertTrue(test_job.getPositionType() instanceof PositionType);
+        assertTrue(test_job.getCoreCompetency() instanceof CoreCompetency);
     }
 }

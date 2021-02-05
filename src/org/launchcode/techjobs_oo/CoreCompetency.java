@@ -33,14 +33,14 @@ public class CoreCompetency extends JobField {
 //        if (!(o instanceof CoreCompetency)) return false;
 //        CoreCompetency that = (CoreCompetency) o;
 //        return id == that.id;
+////    }
+//    @Override
+//    public boolean equals(Object o) {  // Two objects are equal if they have the same id.
+//        if (this == o) return true;
+//        if (!(o instanceof CoreCompetency)) return false;
+//        CoreCompetency coreCompetency = (CoreCompetency) o;
+//        return getId() == coreCompetency.getId();
 //    }
-    @Override
-    public boolean equals(Object o) {  // Two objects are equal if they have the same id.
-        if (this == o) return true;
-        if (!(o instanceof CoreCompetency)) return false;
-        CoreCompetency coreCompetency = (CoreCompetency) o;
-        return getId() == coreCompetency.getId();
-    }
 //    @Override
 //    public int hashCode() {
 //        return Objects.hash(id);
